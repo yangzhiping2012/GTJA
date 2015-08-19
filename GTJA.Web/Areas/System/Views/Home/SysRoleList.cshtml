@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "SysRoleList";
+    Layout = "~/Areas/System/Views/Shared/_Layout.cshtml";
+}
+
+<table title="角色列表" id="dg"
+       class="easyui-datagrid"
+       url="/System/Ajax/Request?cmd=SysRoleList"
+       iconcls="icon-search"
+       toolbar="#toolbar"
+       rownumbers="true"
+       pagination="true" fit="true">
+    <thead>
+        <tr>
+            <th data-options="field:'ID',checkbox:true"></th>
+            <th data-options="field:'RoleName'" width="160">角色名称</th>
+            <th data-options="field:'State',formatter:formatterState" width="160">状态</th>
+            <th data-options="field:'Remark'" width="160">备注</th>
+        </tr>
+    </thead>
+</table>
+<div id="toolbar">
+    <a class="easyui-linkbutton" plain="true" icon="icon-reload">刷新</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-add" onclick="vm.add()">新增</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-edit" onclick="vm.edit()">修改</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-remove" onclick="vm.remove()">删除</a>
+    <a class="easyui-linkbutton" plain="true" icon="icons-lock-lock" onclick="vm.opengrant()">模块授权</a>
+</div>
+
+<div id="dlg" title="角色信息"
+     class="easyui-window"
+     data-options="modal:true,closed:true,maximizable:false,resizable:false,minimizable:false,collapsible:false,top:100"
+     style="padding: 10px; width: 440px; display:none;">
+    <form id="form1" method="post" action="/System/Ajax/Request?cmd=SysRoleAdd">
+        <input type="hidden" id="ID" name="ID" value="0" />
+        <table>
+            <tr>
+                <td>角色名称：</td>
+                <td>
+                    <input name="RoleName" id="RoleName" class="easyui-validatebox" placeholder="角色名称" maxlength="20" type="text" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>状态：</td>
+                <td>
+                    <select name="State" id="State">
+                        <option value="1">启用</option>
+                        <option value="-1">禁用</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>备注：</td>
+                <td>
+                    <textarea id="Remark" name="Remark" class="easyui-validatebox" style="height:100px; width:300px"></textarea>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div style="text-align: center; padding: 5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="vm.submit()">确定</a>
+    </div>
+</div>
+
+
+<div id="dlgtree" title="模块"
+     class="easyui-window"
+     data-options="modal:true,
+     closed:true,
+     maximizable:false,
+     resizable:false,
+     minimizable:false,
+     collapsible:false,
+     top:100,
+     tools:'#toolbar1'"
+     style="padding: 10px; width: 340px; display:none;">
+    <div id="toolbar1">
+        <a href="javascript:void(0)" class="icon-save" onclick="vm.savegrant()" title="保存"></a>
+        <a href="javascript:void(0)" class="icon-reload" onclick="$('#tree').tree('reload')" title="刷新"></a>
+    </div>
+
+    <ul id="tree" class="easyui-tree"></ul>
+
+</div>
+
+@section scripts{
+    <script src="~/Areas/System/Scripts/API.js"></script>
+    <script src="/Areas/System/Scripts/DataGrid.js"></script>
+    <script type="text/javascript" src="/Areas/System/Scripts/SysRoleListView.js"></script>
+}

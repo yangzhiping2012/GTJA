@@ -1,0 +1,130 @@
+﻿@{
+    Layout = "~/Areas/System/Views/Shared/_Layout.cshtml"; ;
+}
+
+<table title="会员列表" id="dg"
+       class="easyui-datagrid"
+       url="/Member/Ajax/Request?cmd=BusMemberList"
+       iconcls="icon-search"
+       toolbar="#toolbar"
+       rownumbers="true"
+       pagination="true" pagelist="[20,30,50,100]" fit="true">
+    <thead>
+        <tr>
+            <th data-options="field:'ID',checkbox:true"></th>
+            <th data-options="field:'Tel'" width="160">电话号码</th>
+            <th data-options="field:'RealName'" width="160">真实姓名</th>
+            <th data-options="field:'NickName'" width="160">昵称</th>
+            <th data-options="field:'MemberType'" width="160">会员类型</th>
+            <th data-options="field:'AddTime',formatter:API.DateFormat" width="160">注册时间</th>
+        </tr>
+    </thead>
+</table>
+<div id="toolbar">
+    <a class="easyui-linkbutton" plain="true" icon="icon-reload" onclick="vm.reload()">刷新</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-add" onclick="vm.add()">新增</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-edit" onclick="vm.edit()">修改</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-remove" onclick="vm.remove()">删除</a>
+    <a class="easyui-linkbutton" plain="true" icon="icons-lock-lock" onclick="vm.openImport()">导入</a>
+</div>
+
+<div id="dlg" title="会员信息"
+     class="easyui-window"
+     data-options="modal:true,closed:true,maximizable:false,resizable:false,minimizable:false,collapsible:false,top:100"
+     style="padding: 10px; width: 440px; display:none;">
+    <form id="form1" method="post" action="/Member/Ajax/Request?cmd=BusMemberAddOrUpdate">
+        <input type="hidden" id="ID" name="ID" value="0" />
+        <table>
+            
+            <tr>
+                <td>电话号码：</td>
+                <td>
+                    <input name="Tel" id="Tel" class="easyui-validatebox" placeholder="" maxlength="20" type="text" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>真实姓名：</td>
+                <td>
+                    <input name="RealName" id="RealName" class="easyui-validatebox" placeholder="" maxlength="20" type="text" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>昵称：</td>
+                <td>
+                    <input name="NickName" id="NickName" class="easyui-validatebox" placeholder="" maxlength="20" type="text" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>QQ：</td>
+                <td>
+                    <input name="QQ" id="QQ" class="easyui-validatebox" placeholder="" maxlength="20" type="text" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>电子邮箱：</td>
+                <td>
+                    <input name="Email" id="Email" class="easyui-validatebox" placeholder="" maxlength="20" type="text" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>住址：</td>
+                <td>
+                    <input name="Address" id="Address" class="easyui-validatebox" placeholder="" maxlength="20" type="text" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>状态：</td>
+                <td>
+                    <select name="State" id="State">
+                        <option value="1">启用</option>
+                        <option value="-1">禁用</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>会员类型：</td>
+                <td>
+                    <select id="MemberType" class="easyui-combobox" name="MemberType" style="width:200px;" data-options="valueField:'Code',textField:'Name',url:'/system/ajax/request?cmd=SysMemberTypeList'"></select>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div style="text-align: center; padding: 5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="vm.submit()">确定</a>
+    </div>
+</div>
+
+
+
+<div id="dlgImport" title="导入会员信息"
+     class="easyui-window"
+     data-options="modal:true,closed:true,maximizable:false,resizable:false,minimizable:false,collapsible:false,top:100"
+     style="padding: 10px; width: 440px; display:none;">
+    <form id="form1" method="post" action="/Member/Ajax/Request?cmd=BusMemberUpload" enctype="multipart/form-data">
+        <table>
+           
+            <tr>
+                <td>会员信息：</td>
+                <td>
+                    <input type="file" name="file" />
+                </td>
+            </tr>
+            <tr>
+                <td>提示信息：</td>
+                <td>
+                    <b style="color:#ff0000">导入会覆盖所有的原始数据</b>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div style="text-align: center; padding: 5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="vm.import()">确定</a>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Areas/System/Scripts/API.js"></script>
+    <script src="/Areas/System/Scripts/DataGrid.js"></script>
+    <script type="text/javascript" src="/Areas/System/Scripts/BusMemberList.js"></script>
+}

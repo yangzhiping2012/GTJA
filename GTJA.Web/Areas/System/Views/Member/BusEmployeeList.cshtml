@@ -1,0 +1,121 @@
+﻿@{
+    Layout = "~/Areas/System/Views/Shared/_Layout.cshtml"; ;
+}
+
+<table id="dg"
+       class="easyui-datagrid"
+       url="/Member/Ajax/Request?cmd=BusEmployeeList"
+       iconcls="icon-search"
+       toolbar="#toolbar"
+       rownumbers="true"
+       pagination="true" fit="true">
+    <thead>
+        <tr>
+            <th data-options="field:'ID',checkbox:true"></th>
+            <th data-options="field:'RealName'" width="150">真是姓名</th>
+            <th data-options="field:'Tel'" width="150">联系电话</th>
+            <th data-options="field:'Email'" width="150">Email</th>
+            <th data-options="field:'State',formatter:formatterState" width="150">状态</th>
+        </tr>
+    </thead>
+</table>
+
+<div id="toolbar">
+    <a class="easyui-linkbutton" plain="true" icon="icon-reload" onclick="vm.reload()">刷新</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-add" onclick="vm.add()">新增</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-edit" onclick="vm.edit()">修改</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-remove" onclick="vm.remove()">删除</a>
+    <a class="easyui-linkbutton" plain="true" icon="icons-lock-lock" onclick="vm.opengrant()">设置部门</a>
+    <a class="easyui-linkbutton" plain="true" icon="icons-lock-lock" onclick="">导入</a>
+</div>
+
+
+<div id="dlg" title="会员信息"
+     class="easyui-window"
+     data-options="modal:true,closed:true,maximizable:false,resizable:false,minimizable:false,collapsible:false,top:100"
+     style="padding: 10px; width: 440px; display:none;">
+    <form id="form1" method="post" action="/Member/Ajax/Request?cmd=BusEmployeeAddOrUpdate">
+        <input type="hidden" id="ID" name="ID" value="0" />
+        <table>
+           
+            <tr>
+                <td>电话号码：</td>
+                <td>
+                    <input name="Tel" id="Tel" class="easyui-validatebox" placeholder="" maxlength="20" type="text" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>真实姓名：</td>
+                <td>
+                    <input name="RealName" id="RealName" class="easyui-validatebox" placeholder="" maxlength="20" type="text" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>昵称：</td>
+                <td>
+                    <input name="NickName" id="NickName" class="easyui-validatebox" placeholder="" maxlength="20" type="text" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>QQ：</td>
+                <td>
+                    <input name="QQ" id="QQ"  placeholder="" maxlength="20" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>电子邮箱：</td>
+                <td>
+                    <input name="Email" id="Email"  placeholder="" maxlength="20" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>住址：</td>
+                <td>
+                    <input name="Address" id="Address"placeholder="" maxlength="20" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>状态：</td>
+                <td>
+                    <select name="State" id="State">
+                        <option value="1" selected>启用</option>
+                        <option value="-1">禁用</option>
+                    </select>
+                </td>
+            </tr>
+           
+           
+
+        </table>
+    </form>
+
+    <div style="text-align: center; padding: 5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="vm.submit()">确定</a>
+    </div>
+</div>
+
+
+<div id="dlgtree" title="角色列表"
+     class="easyui-window"
+     data-options="modal:true,
+     closed:true,
+     maximizable:false,
+     resizable:false,
+     minimizable:false,
+     collapsible:false,
+     top:100,
+     tools:'#toolbar1'"
+     style="padding: 10px; width: 340px; display:none;">
+    <div id="toolbar1">
+        <a href="javascript:void(0)" class="icon-save" onclick="vm.savegrant()" title="保存"></a>
+        <a href="javascript:void(0)" class="icon-reload" onclick="$('#tree').tree('reload')" title="刷新"></a>
+    </div>
+
+    <ul id="tree" class="easyui-tree"></ul>
+
+</div>
+@section scripts{
+        <script src="~/Areas/System/Scripts/API.js"></script>
+        <script src="/Areas/System/Scripts/DataGrid.js"></script>
+        <script type="text/javascript" src="/Areas/System/Scripts/BusEmployeeList.js"></script>
+    }

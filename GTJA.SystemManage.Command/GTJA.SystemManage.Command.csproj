@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA4B9A4B-9BA0-4E85-B9DC-18EBD3EDF52E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GTJA.SystemManage.Command</RootNamespace>
+    <AssemblyName>GTJA.SystemManage.Command</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysDictionaryAddCommand.cs" />
+    <Compile Include="SysDictionaryDeleteCommand.cs" />
+    <Compile Include="SysMemberTypeListCommand.cs" />
+    <Compile Include="SysDictionaryListCommand.cs" />
+    <Compile Include="SysLogListCommand.cs" />
+    <Compile Include="SysMenuListCommand.cs" />
+    <Compile Include="SysModuleListCommand.cs" />
+    <Compile Include="SysModuleTreeCommand.cs" />
+    <Compile Include="SysRoleAddCommand.cs" />
+    <Compile Include="SysRoleListCommand.cs" />
+    <Compile Include="SysRoleModuleAddCommand.cs" />
+    <Compile Include="SysRoleRemoveCommand.cs" />
+    <Compile Include="SysRoleTreeCommand.cs" />
+    <Compile Include="SysSettingListCommand.cs" />
+    <Compile Include="SysSettingSaveCommand.cs" />
+    <Compile Include="SysUserActionCommand.cs" />
+    <Compile Include="SysUserAddCommand.cs" />
+    <Compile Include="SysUserListCommand.cs" />
+    <Compile Include="SysUserRemoveCommand.cs" />
+    <Compile Include="SysUserRoleAddCommand.cs" />
+    <Compile Include="SysUserRoleListCommand.cs" />
+    <Compile Include="SysCommandContext.cs" />
+    <Compile Include="SysCommandManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GTJA.Common.Core\GTJA.Common.Core.csproj">
+      <Project>{8b85afb2-ac1e-4abf-bcf6-d6a57987d374}</Project>
+      <Name>GTJA.Common.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.Common.Data\GTJA.Common.Data.csproj">
+      <Project>{d04f34db-c351-4a32-a17a-a637900ff4d1}</Project>
+      <Name>GTJA.Common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.Common.Interfaces\GTJA.Common.Interfaces.csproj">
+      <Project>{12282b37-777f-492d-8342-df797ab9abd6}</Project>
+      <Name>GTJA.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.SystemManage.AppModel\GTJA.SystemManage.AppModel.csproj">
+      <Project>{63858fbe-cad5-4027-b5c4-7ee3140f2a56}</Project>
+      <Name>GTJA.SystemManage.AppModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.SystemManage.BLL\GTJA.SystemManage.BLL.csproj">
+      <Project>{018f67d0-4e25-4479-93d9-68c47706f685}</Project>
+      <Name>GTJA.SystemManage.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.SystemManage.DAL\GTJA.SystemManage.DAL.csproj">
+      <Project>{e68d742d-2e59-4544-b07e-301d62d14078}</Project>
+      <Name>GTJA.SystemManage.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.SystemManage.Model\GTJA.SystemManage.Model.csproj">
+      <Project>{e1d16495-e8e9-4a70-90a3-003b8883f1be}</Project>
+      <Name>GTJA.SystemManage.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

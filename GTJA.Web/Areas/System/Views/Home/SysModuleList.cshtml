@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "SysModuleList";
+    Layout = "~/Areas/System/Views/Shared/_Layout.cshtml";
+}
+
+<table title="菜单列表" id="dg"
+       class="easyui-treegrid"
+       url="/System/Ajax/Request?cmd=SysModuleList"
+       idfield='ID'
+       treefield='ModuleName'
+       toolbar='#toolbar'
+       rownumbers='true' fit="true">
+    <thead>
+        <tr>
+            <th data-options="field:'ModuleName'" width="200">菜单名称</th>
+            <th data-options="field:'Url'" width="200">路径</th>
+            @*<th data-options="field:'OrderIndex'" width="150">顺序</th>*@
+            <th data-options="field:'State',formatter:formatterState" width="150">状态</th>
+        </tr>
+    </thead>
+</table>
+<div id="toolbar">
+    <a class="easyui-linkbutton" plain="true" icon="icon-reload" onclick="vm.reload()">刷新</a>
+</div>
+
+@section scripts{
+    <script src="/Areas/System/Scripts/DataGrid.js"></script>
+    <script type="text/javascript" src="/Areas/System/Scripts/SysModuleListView.js"></script>
+}

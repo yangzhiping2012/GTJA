@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SignalR Simple Chat</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="Content/chat.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="col-xs-12">
+                    <div class="col-xs-2"><img src="Content/Images/userPhoto.jpeg" width="100" height="100"></div>
+                    <div class="col-xs-10">
+                        <h1 id="username">昵称:PowerYang</h1>
+                        <p>直播状态：在线</p>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="vedio" id="play"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-4">
+                <div class="list">
+                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">聊天区</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">成员列表</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home" style="overflow-y:auto; height:400px;">
+                            <ul id="chatpanel" class="content-reply-box mg10">
+
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile" style="overflow-y: auto; height: 400px;">
+                            <ul id="users"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bq">
+                    <div class="dropdown pull-left">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            表情
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">表情1</a></li>
+                            <li><a href="#">表情2</a></li>
+                            <li><a href="#">表情3</a></li>
+                            <li><a href="#">表情4</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            礼物
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><a href="#">礼物1</a></li>
+                            <li><a href="#">礼物2</a></li>
+                            <li><a href="#">礼物3</a></li>
+                            <li><a href="#">礼物4</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="send">
+                    <textarea id="msgtext" class="send-area pull-left"></textarea>
+                    <button class="btn btn-primary btn-send " id="sendmessage">发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script id="messageTmp" type="text/x-jquery-tmpl">
+        <li class="${style}">
+            <a class="user" href="#"><img class="img-responsive avatar_" src="${Image}" alt=""><span class="user-name">${UserName}</span></a>
+            <div class="reply-content-box">
+                <span class="reply-time">${time}</span>
+                <div class="reply-content pr">
+                    <span class="arrow">&nbsp;</span>
+                    ${message}
+                </div>
+            </div>
+        </li>
+    </script>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/jquery.tmpl.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="http://localhost:8080/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function () {
+           
+            $.connection.hub.url = "http://localhost:8080/signalr";
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+                    chatHub.server.send($("#msgtext").val())
+                                       .fail(function (err) {
+                                           alert(err);
+                                       });
+                    $("#msgtext").val("").focus();
+                });
+            });
+            var chatHub = $.connection.chatHub;
+            chatHub.client.newUserNotification = newUserNotification;
+            chatHub.client.userDisconnectedNotification = userDisconnectedNotification;
+
+            chatHub.client.welcome = welcome;
+            chatHub.client.message = addMessageToPanel;
+
+            function welcome(assignedNickname, userList) {
+                var result = "";
+                for (var i = 0; i < userList.length; i++) {
+                    var user = userList[i];
+                    result += getUserListItem(user);
+                }
+                $("#users").empty();
+                $("#users").append(result);
+                $("#user-info").show();
+                $("#username").text("昵称:" + assignedNickname);
+            }
+
+            function userDisconnectedNotification(user) {
+                var userElement = getUserElement(user.Id);
+                if (userElement.length > 0) {
+                    addMessageToPanel("",user.Name + " 离开了.", "system");
+                    userElement.remove();
+                }
+            }
+
+            function newUserNotification(user) {
+                if (getUserElement(user.Id).length == 0) {
+                    $("#users").append($(getUserListItem(user)));
+                    addMessageToPanel("","欢迎: " + user.Name + ". 加入!", "system");
+                }
+            }
+          
+
+            function addMessageToPanel(user, message,type) {
+                var $panel = $("#chatpanel");
+                var _style = user.Id === $.connection.hub.id ? "even" : "odd";
+                var _now = new Date();
+                var time = (_now.getMonth()+1) + "-" + _now.getDate() + "  " + _now.getHours() + ":" + _now.getMinutes();
+                var mssage = { style: _style, time: time, Image: user.Image, message: message };
+                if (type== undefined) {
+                    $panel.append($("#messageTmp").tmpl(mssage));
+                } else {
+                    $panel.append("<li class='" + type + "'>" + message + "</li>");
+                }
+            }
+
+            function getUserListItem(user) {
+                return "<li id='u" + user.Id + "'><img src='" + user.Image + "' class='img-responsive avatar_' /><div>" + user.Name + "</div></li>";
+            }
+            function getUserElement(id) {
+                return $("#u" + id);
+            }
+            
+        });
+    </script>
+    <script type="text/javascript" src="http://cdn.aodianyun.com/lss/aodianplay/player.js"></script>
+    <script type="text/javascript">
+        var objectPlayer = new aodianPlayer({
+            container: 'play',//播放器容器ID，必要参数
+            rtmpUrl: 'rtmp://5768.lssplay.aodianyun.com/539632889190/stream',//控制台开通的APP rtmp地址，必要参数
+            hlsUrl: 'http://5768.hlsplay.aodianyun.com/539632889190/stream.m3u8',//控制台开通的APP hls地址，必要参数
+            /* 以下为可选参数*/
+            width: '720',//播放器宽度，可用数字、百分比等
+            height: '480',//播放器高度，可用数字、百分比等
+            autostart: true,//是否自动播放，默认为false
+            bufferlength: '1',//视频缓冲时间，默认为3秒。hls不支持！手机端不支持
+            maxbufferlength: '2',//最大视频缓冲时间，默认为2秒。hls不支持！手机端不支持
+            stretching: '1',//设置全屏模式,1代表按比例撑满至全屏,2代表铺满全屏,3代表视频原始大小,默认值为1。hls初始设置不支持，手机端不支持
+            controlbardisplay: 'disable'//是否显示控制栏，值为：disable、enable默认为disable。
+        });
+        /* rtmpUrl与hlsUrl同时存在时播放器优先加载rtmp*/
+        /* 以下为Aodian Player支持的事件 */
+        /* objectPlayer.startPlay();//播放 */
+        /* objectPlayer.pausePlay();//暂停 */
+        /* objectPlayer.stopPlay();//停止 hls不支持*/
+        /* objectPlayer.closeConnect();//断开连接 */
+        /* objectPlayer.setMute(true);//静音或恢复音量，参数为true|false */
+        /* objectPlayer.setVolume(volume);//设置音量，参数为0-100数字 */
+        /* objectPlayer.setFullScreenMode(1);//设置全屏模式,1代表按比例撑满至全屏,2代表铺满全屏,3代表视频原始大小,默认值为1。手机不支持 */
+    </script>
+</body>
+</html>

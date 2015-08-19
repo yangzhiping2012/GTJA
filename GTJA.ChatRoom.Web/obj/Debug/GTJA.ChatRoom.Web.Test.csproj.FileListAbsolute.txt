@@ -1,0 +1,6 @@
+E:\国泰君安证券项目\Src\GTJA\GTJA.ChatRoom.Web\bin\GTJA.ChatRoom.Web.dll.config
+E:\国泰君安证券项目\Src\GTJA\GTJA.ChatRoom.Web\bin\GTJA.ChatRoom.Web.dll
+E:\国泰君安证券项目\Src\GTJA\GTJA.ChatRoom.Web\bin\GTJA.ChatRoom.Web.pdb
+E:\国泰君安证券项目\Src\GTJA\GTJA.ChatRoom.Web\obj\Debug\GTJA.ChatRoom.Web.Test.csprojResolveAssemblyReference.cache
+E:\国泰君安证券项目\Src\GTJA\GTJA.ChatRoom.Web\obj\Debug\GTJA.ChatRoom.Web.dll
+E:\国泰君安证券项目\Src\GTJA\GTJA.ChatRoom.Web\obj\Debug\GTJA.ChatRoom.Web.pdb

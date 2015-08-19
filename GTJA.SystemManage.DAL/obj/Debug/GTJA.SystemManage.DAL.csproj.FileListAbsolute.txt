@@ -1,0 +1,14 @@
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\bin\Debug\GTJA.SystemManage.DAL.dll.config
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\bin\Debug\GTJA.SystemManage.DAL.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\bin\Debug\GTJA.SystemManage.DAL.pdb
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\bin\Debug\EntityFramework.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\bin\Debug\GTJA.Common.Data.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\bin\Debug\GTJA.SystemManage.Model.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\bin\Debug\GTJA.Common.Data.pdb
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\bin\Debug\GTJA.SystemManage.Model.pdb
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\bin\Debug\EntityFramework.xml
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\obj\Debug\GTJA.SystemManage.DAL.csprojResolveAssemblyReference.cache
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\obj\Debug\GTJA.SystemManage.DAL.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.DAL\obj\Debug\GTJA.SystemManage.DAL.pdb

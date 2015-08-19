@@ -1,0 +1,4 @@
+E:\国泰君安证券项目\Src\GTJA\GTJA.SystemManage.BLL.Tests\bin\Debug\GTJA.SystemManage.BLL.Tests.dll
+E:\国泰君安证券项目\Src\GTJA\GTJA.SystemManage.BLL.Tests\bin\Debug\GTJA.SystemManage.BLL.Tests.pdb
+E:\国泰君安证券项目\Src\GTJA\GTJA.SystemManage.BLL.Tests\obj\Debug\GTJA.SystemManage.BLL.Tests.dll
+E:\国泰君安证券项目\Src\GTJA\GTJA.SystemManage.BLL.Tests\obj\Debug\GTJA.SystemManage.BLL.Tests.pdb

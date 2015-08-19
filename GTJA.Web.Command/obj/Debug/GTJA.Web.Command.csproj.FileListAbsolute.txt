@@ -1,0 +1,7 @@
+E:\国泰君安证券项目\Src\GTJA\GTJA.Web.Command\bin\Debug\GTJA.Web.Command.dll
+E:\国泰君安证券项目\Src\GTJA\GTJA.Web.Command\bin\Debug\GTJA.Web.Command.pdb
+E:\国泰君安证券项目\Src\GTJA\GTJA.Web.Command\bin\Debug\GTJA.Common.Interfaces.dll
+E:\国泰君安证券项目\Src\GTJA\GTJA.Web.Command\bin\Debug\GTJA.Common.Interfaces.pdb
+E:\国泰君安证券项目\Src\GTJA\GTJA.Web.Command\obj\Debug\GTJA.Web.Command.csprojResolveAssemblyReference.cache
+E:\国泰君安证券项目\Src\GTJA\GTJA.Web.Command\obj\Debug\GTJA.Web.Command.dll
+E:\国泰君安证券项目\Src\GTJA\GTJA.Web.Command\obj\Debug\GTJA.Web.Command.pdb

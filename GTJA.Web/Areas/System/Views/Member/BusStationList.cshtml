@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Areas/System/Views/Shared/_Layout.cshtml"; ;
+}
+<table title="分公司列表" id="dg"
+       class="easyui-treegrid"
+       url="/Member/Ajax/Request?cmd=BusStationList"
+       idfield='ID'
+       treefield='Name'
+       toolbar='#toolbar'
+       rownumbers='true' fit="true" >
+    <thead>
+        <tr>
+            <th data-options="field:'Name'" width="200">名称</th>
+            <th data-options="field:'Address'" width="200">地址</th>
+            <th data-options="field:'Tel'" width="150">电话</th>
+            <th data-options="field:'Remark'" width="300">备注</th>
+        </tr>
+    </thead>
+</table>
+<div id="toolbar">
+    <a class="easyui-linkbutton" plain="true" icon="icon-reload" onclick="vm.reload()">刷新</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-add" onclick="vm.add()">新增</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-edit" onclick="vm.edit()">修改</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-remove" onclick="vm.remove()">删除</a>
+</div>
+
+<div id="dlg" title="公司信息"
+     class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
+     closed="true" buttons="#dlg-buttons">
+    <form id="form1" class="" method="post" action="/Member/Ajax/Request?cmd=BusStaionAddOrUpdate" novalidate>
+        <input type="hidden" id="ID" name="ID" />
+        <div class="fitem">
+            <label>名称：</label>
+            <input name="Name" id="Name" class="easyui-validatebox" data-options="required:true">
+        </div>
+        <div class="fitem">
+            <label>地址：</label>
+            <input name="Address" id="Address" class="easyui-validatebox" data-options="required:true">
+        </div>
+        <div class="fitem">
+            <label>联系电话：</label>
+            <input name="Tel" id="Tel" class="easyui-validatebox" data-options="required:true">
+        </div>
+        <div class="fitem">
+            <label>上级：</label>
+            <select class="easyui-combotree easyui-validatebox"  name="ParentID" id="ParentID"></select>
+        </div>
+       
+        <div class="fitem">
+            <label>备注：</label>
+            <textarea id="Remark" rows=3 name="Remark" class="textarea "></textarea>
+        </div>
+    </form>
+
+    <div id="dlg-buttons">
+        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconcls="icon-ok" onclick="vm.submit()" style="width:90px">保存</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+    </div>
+</div>
+
+@section scripts{
+    <script src="/Areas/System/Scripts/TreeGrid.js"></script>
+    <script src="/Areas/System/Scripts/BusStationListView.js"></script>
+}

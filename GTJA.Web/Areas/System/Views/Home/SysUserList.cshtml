@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "SysUserList";
+    Layout = "~/Areas/System/Views/Shared/_Layout.cshtml";
+}
+
+<table title="用户列表" id="dg"
+       class="easyui-datagrid"
+       url="/System/Ajax/Request?cmd=SysUserList"
+       iconcls="icon-search"
+       toolbar="#toolbar"
+       rownumbers="true"
+       pagination="true" fit="true">
+    <thead>
+        <tr>
+            <th data-options="field:'ID',checkbox:true"></th>
+            <th data-options="field:'LoginName'" width="150">登录名</th>
+            <th data-options="field:'TrueName'" width="150">真是姓名</th>
+            <th data-options="field:'PoneNumber'" width="150">联系电话</th>
+            <th data-options="field:'WorkNumber'" width="150">单位电话</th>
+            <th data-options="field:'State',formatter:formatterState" width="150">状态</th>
+        </tr>
+    </thead>
+</table>
+<div id="toolbar">
+    <a class="easyui-linkbutton" plain="true" icon="icon-reload" onclick="vm.reload()">刷新</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-add" onclick="vm.add()">新增</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-edit" onclick="vm.edit()">修改</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-remove" onclick="vm.remove()">删除</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-filter" onclick="vm.reset()">重置密码</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-role" onclick="vm.opengrant()">角色授权</a>
+    &nbsp;&nbsp;&nbsp;<input class="easyui-validatebox" id="keywords" name="keywords" style="width:200px" type="text" placeholder="请输入用户登录名或真实姓名" />
+    <a class="easyui-linkbutton" plain="true" icon="icon-search" onclick="vm.doSearch()">查询</a>
+</div>
+
+<div id="dlg" title="管理员信息"
+     class="easyui-window"
+     data-options="modal:true,closed:true,maximizable:false,resizable:false,minimizable:false,collapsible:false,top:100"
+     style="padding: 10px; width: 340px; display:none;">
+    <form id="form1" method="post" action="/System/Ajax/Request?cmd=SysUserAdd">
+        <input type="hidden" id="ID" name="ID" value="0" />
+        <table>
+            <tr>
+                <td>登陆帐号：</td>
+                <td>
+                    <input name="LoginName" id="LoginName" class="easyui-validatebox" placeholder="登陆帐号" maxlength="20" type="text" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>真实姓名：</td>
+                <td><input name="TrueName" id="TrueName" class="easyui-validatebox" placeholder="真实姓名" type="text" data-options="required:true" /></td>
+            </tr>
+            <tr>
+                <td>联系电话：</td>
+                <td><input name="PoneNumber" id="PoneNumber" class="easyui-validatebox" type="text" /></td>
+            </tr>
+            <tr>
+                <td>单位电话：</td>
+                <td><input name="WorkNumber" id="WorkNumber" class="easyui-validatebox" type="text" /></td>
+            </tr>
+            <tr>
+                <td>状态：</td>
+                <td>
+                    <select class="easyui-validatebox" name="State" id="State" data-options="required:true">
+                        <option value="1">启用</option>
+                        <option value="-1">禁用</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div style="text-align: center; padding: 5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="vm.submit(0)">确定</a>
+    </div>
+</div>
+
+<div id="dlgPass" title="管理员信息"
+     class="easyui-window"
+     data-options="modal:true,closed:true,maximizable:false,resizable:false,minimizable:false,collapsible:false,top:100"
+     style="padding: 10px; width: 340px; display:none;">
+    <form id="form2" method="post" action="/System/Ajax/Request?cmd=SysUserAdd">
+        <input type="hidden" id="ID" name="ID" value="0" />
+        <table>
+            <tr>
+                <td>登陆帐号：</td>
+                <td>
+                    <input name="LoginName" id="LoginName" class="easyui-validatebox" placeholder="登陆帐号" disabled="disabled" />
+                </td>
+            </tr>
+            <tr>
+                <td>真实姓名：</td>
+                <td><input name="TrueName" id="TrueName" class="easyui-validatebox" type="text" disabled="disabled" /></td>
+            </tr>
+            <tr id="trPass">
+                <td>登录密码：</td>
+                <td><input name="LoginPass" id="LoginPass" class="easyui-validatebox" type="password" data-options="required:true" /></td>
+            </tr>
+        </table>
+    </form>
+
+    <div style="text-align: center; padding: 5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="vm.submit(1)">确定</a>
+    </div>
+</div>
+
+<div id="dlgtree" title="角色列表"
+     class="easyui-window"
+     data-options="modal:true,
+     closed:true,
+     maximizable:false,
+     resizable:false,
+     minimizable:false,
+     collapsible:false,
+     top:100,
+     tools:'#toolbar1'"
+     style="padding: 10px; width: 340px; display:none;">
+    <div id="toolbar1">
+        <a href="javascript:void(0)" class="icon-save" onclick="vm.savegrant()" title="保存"></a>
+        <a href="javascript:void(0)" class="icon-reload" onclick="$('#tree').tree('reload')" title="刷新"></a>
+    </div>
+
+    <ul id="tree" class="easyui-tree"></ul>
+
+</div>
+
+
+
+
+@section scripts{
+    <script src="/Areas/System/Scripts/DataGrid.js"></script>
+    <script src="/Areas/System/Scripts/SysUserListView.js"></script>
+}

@@ -1,0 +1,4 @@
+E:\国泰君安证券项目\Src\GTJA\GTJA.Common.Core.Tests\bin\Debug\GTJA.Common.Core.Tests.dll
+E:\国泰君安证券项目\Src\GTJA\GTJA.Common.Core.Tests\bin\Debug\GTJA.Common.Core.Tests.pdb
+E:\国泰君安证券项目\Src\GTJA\GTJA.Common.Core.Tests\obj\Debug\GTJA.Common.Core.Tests.dll
+E:\国泰君安证券项目\Src\GTJA\GTJA.Common.Core.Tests\obj\Debug\GTJA.Common.Core.Tests.pdb

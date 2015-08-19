@@ -1,0 +1,624 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GTJA.MemberManage.Model</name>
+    </assembly>
+    <members>
+        <member name="T:GTJA.MemberManage.Model.Activity">
+            <summary>
+            活动信息表
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Activity.AddTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Activity.Content">
+            <summary>
+            活动内容
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Activity.SysUserID">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Activity.Score">
+            <summary>
+            获得多少积分
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Activity.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Activity.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.ActivityMember">
+            <summary>
+            活动报名表
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.Article">
+            <summary>
+            文章表
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.ID">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.Title">
+            <summary>
+            文章标题
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.AddTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.MemberID">
+            <summary>
+            发表人：外键关联会员ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.Recommend">
+            <summary>
+            推荐
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.Top">
+            <summary>
+            置顶
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.ViewCount">
+            <summary>
+            阅读次数
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.FollowCount">
+            <summary>
+            关注数
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.CommentCount">
+            <summary>
+            评论条数
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.FavoriteCount">
+            <summary>
+            收藏数
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.SupportCount">
+            <summary>
+            点赞次数
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.PublishLevel">
+            <summary>
+            发布范围：发送给付费会员、全站公开
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.CategoryID">
+            <summary>
+            分类ID：外键关联ArticleCategory
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Article.Score">
+            <summary>
+            文章积分：针对精囊妙计需要积分才能查看
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.ArticleCategory">
+            <summary>
+            文章分类表
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleCategory.ID">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleCategory.Name">
+            <summary>
+            分类名称
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleCategory.No">
+            <summary>
+            分类编号
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleCategory.OrderIndex">
+            <summary>
+            排序号
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleCategory.State">
+            <summary>
+            装态
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleCategory.ParentID">
+            <summary>
+            父级ID
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.ArticleComment">
+            <summary>
+            文章评论表
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleComment.ID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleComment.ArticleID">
+            <summary>
+            文章ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleComment.MemberID">
+            <summary>
+            评论会员ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleComment.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleComment.AddTime">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleComment.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.ChatRoom">
+            <summary>
+            聊天室
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ChatRoom.ID">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ChatRoom.ChannelNo">
+            <summary>
+            频道号
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ChatRoom.ChannelPassword">
+            <summary>
+            频道密码
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ChatRoom.MemberID">
+            <summary>
+            投资顾问ID，外键关联Member表
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ChatRoom.Name">
+            <summary>
+            聊天室名称
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ChatRoom.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ChatRoom.AddTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ChatRoom.Level">
+            <summary>
+            级别：对应相应的会员
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ChatRoom.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ChatRoom.Score">
+            <summary>
+            所需积分
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.Department">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Department.ID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Department.No">
+            <summary>
+            部门编码
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Department.Name">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Department.ParentID">
+            <summary>
+            父级部门
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Department.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Department.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Department.StationID">
+            <summary>
+            分公司
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.DepartmentAndMember">
+            <summary>
+            部门关联人
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.DepartmentAndMember.DepartmentID">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.DepartmentAndMember.MemberID">
+            <summary>
+            会员ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.DepartmentAndMember.PositionNo">
+            <summary>
+            职位ID
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.ArticleFavorite">
+            <summary>
+            文章收藏,点赞
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleFavorite.ArticleID">
+            <summary>
+            文章ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleFavorite.MemberID">
+            <summary>
+            会员ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleFavorite.AddTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ArticleFavorite.Type">
+            <summary>
+            2：点赞 1:收藏
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.Member">
+            <summary>
+            会员表
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.ID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.Tel">
+            <summary>
+            电话号码
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.RealName">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.Password">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.AddTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.MemberType">
+            <summary>
+            会员类别：外键关联MemberType
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.Address">
+            <summary>
+            住址
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.Asset">
+            <summary>
+            资产量：需要加密
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.Score">
+            <summary>
+            积分
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.IDCard">
+            <summary>
+            身份证号：需要加密
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.StationID">
+            <summary>
+            营业部ID：用于投顾关联到营业点，外键关联Station表
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.Profile">
+            <summary>
+            简介
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.FundAccount">
+            <summary>
+            资金账号 需要加密
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.OpeningDate">
+            <summary>
+            开户日期
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.MarketingPerson">
+            <summary>
+            营销人员
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.AssetOfMonth">
+            <summary>
+            当月总资产，需要加密
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Member.NetCommission">
+            <summary>
+            净佣金，需要加密
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.MemberAndMember">
+            <summary>
+            会员上下级关系
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.MemberAndMember.ParentMemberID">
+            <summary>
+            投资顾问上级领导ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.MemberAndMember.SubMemberID">
+            <summary>
+            下属人员ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.MemberAndMember.ID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.MemberAuth">
+            <summary>
+            会员短信验证码
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.MemberAuth.ID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.MemberAuth.AuthType">
+            <summary>
+            验证类别：手机号、邮箱、微信..
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.MemberAuth.ValidCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.MemberAuth.ExpiredTime">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.MemberAuth.AuthIdentity">
+            <summary>
+            验证账号信息-手机号、邮箱
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.MemberFollow">
+            <summary>
+            会员互相关注表
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.MemberFollow.ID">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.MemberFollow.MemberID">
+            <summary>
+            会员ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.MemberFollow.FollowMemberID">
+            <summary>
+            被关注会员ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.MemberFollow.AddTime">
+            <summary>
+            关注时间
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.SMS">
+            <summary>
+            短信表：用于记录调仓信息
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.SMS.Tel">
+            <summary>
+            会员电话号码
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.SMS.Content">
+            <summary>
+            短信内容
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.SMS.AddTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.SMS.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.SMS.MemberID">
+            <summary>
+            对应会员ID
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.ScoreDetail">
+            <summary>
+            积分详细
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ScoreDetail.MemberID">
+            <summary>
+            会员ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ScoreDetail.Score">
+            <summary>
+            获得积分
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ScoreDetail.AddTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.ScoreDetail.RuleID">
+            <summary>
+            规则ID
+            </summary>
+        </member>
+        <member name="T:GTJA.MemberManage.Model.Station">
+            <summary>
+            营业点：例如顺城营业点
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Station.ID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Station.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Station.ParentID">
+            <summary>
+            父级ID
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Station.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Station.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:GTJA.MemberManage.Model.Station.Tel">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+    </members>
+</doc>

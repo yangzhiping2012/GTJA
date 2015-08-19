@@ -1,0 +1,4 @@
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Interfaces\bin\Debug\GTJA.Common.Interfaces.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Interfaces\bin\Debug\GTJA.Common.Interfaces.pdb
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Interfaces\obj\Debug\GTJA.Common.Interfaces.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Interfaces\obj\Debug\GTJA.Common.Interfaces.pdb

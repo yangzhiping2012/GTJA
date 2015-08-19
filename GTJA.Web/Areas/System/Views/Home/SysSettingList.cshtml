@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Areas/System/Views/Shared/_Layout.cshtml"; ;
+}
+<table id="dg" class="easyui-propertygrid"
+       data-options="
+       url:'/System/Ajax/Request?cmd=SysSettingList',
+       showGroup:false,
+       scrollbarSize:0,
+        columns: mycolumns"
+        toolbar="#toolbar"></table>
+
+<div id="toolbar">
+    <a class="easyui-linkbutton" plain="true" icon="icon-reload">刷新</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-add" onclick="vm.save()">保存</a>
+</div>
+@section scripts{
+    <script>
+        var mycolumns = [[
+             { field: 'name', title: '选项', width: 50, sortable: true },
+            { field: 'code', title: '标识', width: 50, sortable: true },
+           
+               { field: 'value', title: '值', width: 300, resizable: true }
+        ]];
+    </script>
+    <script src="/Areas/System/Scripts/SysSettingListView.js"></script>
+}

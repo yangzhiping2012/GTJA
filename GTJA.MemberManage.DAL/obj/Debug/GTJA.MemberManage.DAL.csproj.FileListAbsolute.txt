@@ -1,0 +1,15 @@
+E:\国泰君安证券项目\src\GTJA\GTJA.MemberManage.DAL\bin\Debug\GTJA.MemberManage.DAL.dll.config
+E:\国泰君安证券项目\src\GTJA\GTJA.MemberManage.DAL\bin\Debug\GTJA.MemberManage.DAL.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.MemberManage.DAL\bin\Debug\GTJA.MemberManage.DAL.pdb
+E:\国泰君安证券项目\src\GTJA\GTJA.MemberManage.DAL\bin\Debug\EntityFramework.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.MemberManage.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.MemberManage.DAL\bin\Debug\GTJA.Common.Data.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.MemberManage.DAL\bin\Debug\GTJA.Common.Data.pdb
+E:\国泰君安证券项目\src\GTJA\GTJA.MemberManage.DAL\bin\Debug\EntityFramework.xml
+E:\国泰君安证券项目\src\GTJA\GTJA.MemberManage.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\国泰君安证券项目\src\GTJA\GTJA.MemberManage.DAL\obj\Debug\GTJA.MemberManage.DAL.csprojResolveAssemblyReference.cache
+E:\国泰君安证券项目\src\GTJA\GTJA.MemberManage.DAL\obj\Debug\GTJA.MemberManage.DAL.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.MemberManage.DAL\obj\Debug\GTJA.MemberManage.DAL.pdb
+E:\国泰君安证券项目\Src\GTJA\GTJA.MemberManage.DAL\bin\Debug\GTJA.MemberManage.Model.dll
+E:\国泰君安证券项目\Src\GTJA\GTJA.MemberManage.DAL\bin\Debug\GTJA.MemberManage.Model.pdb
+E:\国泰君安证券项目\Src\GTJA\GTJA.MemberManage.DAL\bin\Debug\GTJA.MemberManage.Model.xml

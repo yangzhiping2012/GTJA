@@ -1,0 +1,10 @@
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.Model\bin\Debug\GTJA.SystemManage.Model.dll.config
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.Model\bin\Debug\GTJA.SystemManage.Model.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.Model\bin\Debug\GTJA.SystemManage.Model.pdb
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.Model\bin\Debug\EntityFramework.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.Model\bin\Debug\EntityFramework.xml
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.Model\obj\Debug\GTJA.SystemManage.Model.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.Model\obj\Debug\GTJA.SystemManage.Model.pdb
+E:\国泰君安证券项目\src\GTJA\GTJA.SystemManage.Model\obj\Debug\GTJA.SystemManage.Model.csprojResolveAssemblyReference.cache

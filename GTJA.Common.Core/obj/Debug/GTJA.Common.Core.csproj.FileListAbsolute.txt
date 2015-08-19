@@ -1,0 +1,9 @@
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Core\bin\Debug\GTJA.Common.Core.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Core\bin\Debug\GTJA.Common.Core.pdb
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Core\bin\Debug\Newtonsoft.Json.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Core\bin\Debug\Newtonsoft.Json.xml
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Core\obj\Debug\GTJA.Common.Core.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Core\obj\Debug\GTJA.Common.Core.pdb
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Core\bin\Debug\log4net.dll
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Core\bin\Debug\log4net.xml
+E:\国泰君安证券项目\src\GTJA\GTJA.Common.Core\obj\Debug\GTJA.Common.Core.csprojResolveAssemblyReference.cache

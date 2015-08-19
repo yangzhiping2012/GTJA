@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "SysLogList";
+    Layout = "~/Areas/System/Views/Shared/_Layout.cshtml";
+}
+
+<table title="用户列表" id="dg"
+       class="easyui-datagrid"
+       url="/System/Ajax/Request?cmd=SysLogList"
+       iconcls="icon-search"
+       toolbar="#toolbar"
+       rownumbers="true"
+       pagination="true"
+       pagelist="[20,30,50,100]" fit="true" singleselect="true">
+    <thead>
+        <tr>
+            <th data-options="field:'LogType',formatter:formatterLogType" width="120">日志分类</th>
+            <th data-options="field:'EventType',formatter:formatterEventType" width="120">事件类型</th>
+            <th data-options="field:'ModuleName'" width="120">操作模块</th>
+            <th data-options="field:'UserName'" width="120">操作用户</th>
+            <th data-options="field:'CreateTime',formatter:API.DateFormat" width="120">操作时间</th>
+            <th data-options="field:'IP'" width="120">操作IP</th>
+            <th data-options="field:'ID',formatter:formatterView" width="120">查看</th>
+        </tr>
+    </thead>
+</table>
+
+
+<div id="toolbar">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    操作时间: <input class="easyui-datebox" style="width:100px" id="startTime">
+    到: <input class="easyui-datebox" style="width:100px" id="endTime">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-validatebox" id="keywords" name="keywords" style="width:200px" type="text" placeholder="姓名、类别、模糊关键字" />
+    <a class="easyui-linkbutton" plain="true" icon="icon-search" onclick="vm.doSearch()">查询</a>
+</div>
+
+
+@section scripts{
+    <script src="~/Areas/System/Scripts/API.js"></script>
+    <script src="/Areas/System/Scripts/DataGrid.js"></script>
+    <script src="/Areas/System/Scripts/SysLogListView.js"></script>
+}

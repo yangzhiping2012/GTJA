@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "SysDictionaryList";
+    Layout = "~/Areas/System/Views/Shared/_Layout.cshtml";
+}
+
+<table title="字典列表" id="dg"
+       class="easyui-treegrid"
+       url="/System/Ajax/Request?cmd=SysDictionaryList"
+       idfield='ID'
+       treefield='Name'
+       toolbar='#toolbar'
+       rownumbers='true' fit="true">
+    <thead>
+        <tr>
+            <th data-options="field:'Name'" width="200">名称</th>
+            <th data-options="field:'Code'" width="200">编码</th>
+
+        </tr>
+    </thead>
+</table>
+<div id="toolbar">
+    <a class="easyui-linkbutton" plain="true" icon="icon-reload" onclick="vm.reload()">刷新</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-add" onclick="vm.add()">新增</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-edit" onclick="vm.edit()">修改</a>
+    <a class="easyui-linkbutton" plain="true" icon="icon-remove" onclick="vm.remove()">删除</a>
+</div>
+
+
+
+
+
+<div id="dlg" title="管理员信息"
+     class="easyui-window"
+     data-options="modal:true,closed:true,maximizable:false,resizable:false,minimizable:false,collapsible:false,top:100"
+     style="padding: 10px; width: 340px; display:none;">
+    <form id="form1" method="post" action="/System/Ajax/Request?cmd=SysDictionaryAdd">
+        <input type="hidden" id="ID" name="ID" value="" />
+        <table>
+            <tr>
+                <td>分类编号：</td>
+                <td>
+                    <input name="Code" id="Code" class="easyui-validatebox" placeholder="编号" maxlength="20" type="text" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>分类名称：</td>
+                <td><input name="Name" id="Name" class="easyui-validatebox" placeholder="名称" type="text" data-options="required:true" /></td>
+            </tr>
+           
+            <tr>
+                <td>上级分类：</td>
+                <td>
+                    <select class="easyui-combotree" name="ParentCode" id="ParentCode" style="width: 150px;" class="easyui-validatebox"></select>
+                </td>
+            </tr>
+            
+        </table>
+    </form>
+
+    <div style="text-align: center; padding: 5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="vm.submit(0)">确定</a>
+    </div>
+</div>
+
+@section scripts{
+    <script src="/Areas/System/Scripts/TreeGrid.js"></script>
+    <script type="text/javascript" src="/Areas/System/Scripts/SysDictionaryListView.js"></script>
+}

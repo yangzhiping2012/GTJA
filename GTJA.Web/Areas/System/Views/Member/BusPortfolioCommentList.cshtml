@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Areas/System/Views/Shared/_Layout.cshtml";
+}
+
+
+<table title="组合评论列表" id="dg"
+       class="easyui-datagrid"
+       url="/Member/Ajax/Request?cmd=BusPortfolioCommentList"
+       iconcls="icon-search"
+       toolbar="#toolbar"
+       rownumbers="true"
+       pagination="true" pagelist="[20,30,50,100]" fit="true">
+    <thead>
+        <tr>
+            <th data-options="field:'ID',checkbox:true"></th>
+            <th data-options="field:'PortfolioID'" width="160">组合名称</th>
+            <th data-options="field:'Content'" width="160">评论内容</th>
+            <th data-options="field:'AddTime',formatter:API.DateFormat" width="160">评论时间</th>
+            <th data-options="field:'MemberID'" width="160">所属会员</th>
+        </tr>
+    </thead>
+</table>
+<div id="toolbar">
+    <a class="easyui-linkbutton" plain="true" icon="icon-reload" onclick="vm.reload()">刷新</a>
+</div>
+@section scripts{
+    <script src="~/Areas/System/Scripts/API.js"></script>
+    <script src="/Areas/System/Scripts/DataGrid.js"></script>
+    <script type="text/javascript" src="/Areas/System/Scripts/BusPortfolioCommentList.js"></script>
+}

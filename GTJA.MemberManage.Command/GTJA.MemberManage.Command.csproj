@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{346D1830-3CFB-43A0-B88C-4D4023FB6834}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GTJA.MemberManage.Command</RootNamespace>
+    <AssemblyName>GTJA.MemberManage.Command</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusArticleCategoryAddCommand.cs" />
+    <Compile Include="BusArticleCategoryDeleteCommand.cs" />
+    <Compile Include="BusArticleCategoryListCommand.cs" />
+    <Compile Include="BusDepartmentListCommand.cs" />
+    <Compile Include="BusDepartmentAddOrUpdateCommand.cs" />
+    <Compile Include="BusDepartmentTreeCommand.cs" />
+    <Compile Include="BusEmployeeAddOrUpdateCommand.cs" />
+    <Compile Include="BusEmployeeAndDepartmentAddCommand.cs" />
+    <Compile Include="BusMemberAddOrUpdateCommand.cs" />
+    <Compile Include="BusEmployeeListCommand.cs" />
+    <Compile Include="BusMemberRemoveCommand.cs" />
+    <Compile Include="BusMemberListCommand.cs" />
+    <Compile Include="BusMemberUploadCommand.cs" />
+    <Compile Include="BusPortfolioChangeListCommand.cs" />
+    <Compile Include="BusPortfolioCommentListCommand.cs" />
+    <Compile Include="BusPortfolioListCommand.cs" />
+    <Compile Include="BusStaionAddOrUpdateCommand.cs" />
+    <Compile Include="BusDepartmentRemoveCommand.cs" />
+    <Compile Include="BusStaionRemoveCommand.cs" />
+    <Compile Include="BusStationListCommand.cs" />
+    <Compile Include="MemberCommandContext.cs" />
+    <Compile Include="MemberCommandManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GTJA.Common.Core\GTJA.Common.Core.csproj">
+      <Project>{8b85afb2-ac1e-4abf-bcf6-d6a57987d374}</Project>
+      <Name>GTJA.Common.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.Common.Data\GTJA.Common.Data.csproj">
+      <Project>{d04f34db-c351-4a32-a17a-a637900ff4d1}</Project>
+      <Name>GTJA.Common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.Common.Interfaces\GTJA.Common.Interfaces.csproj">
+      <Project>{12282b37-777f-492d-8342-df797ab9abd6}</Project>
+      <Name>GTJA.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.MemberManage.AppModel\GTJA.MemberManage.AppModel.csproj">
+      <Project>{3eabbd8c-cb88-4481-b77f-7eafa9c71910}</Project>
+      <Name>GTJA.MemberManage.AppModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.MemberManage.BLL\GTJA.MemberManage.BLL.csproj">
+      <Project>{b7dd79b2-319f-4149-83af-89bc9cdaa970}</Project>
+      <Name>GTJA.MemberManage.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.MemberManage.DAL\GTJA.MemberManage.DAL.csproj">
+      <Project>{fc60db62-93a0-40b2-b386-80b93e8af961}</Project>
+      <Name>GTJA.MemberManage.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.MemberManage.DataImport\GTJA.MemberManage.DataImport.csproj">
+      <Project>{943426ac-d93d-4703-84fb-ec56f1960e24}</Project>
+      <Name>GTJA.MemberManage.DataImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.MemberManage.Model\GTJA.MemberManage.Model.csproj">
+      <Project>{1a8e844b-732b-40e0-8794-8c3ce8db3231}</Project>
+      <Name>GTJA.MemberManage.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.SystemManage.AppModel\GTJA.SystemManage.AppModel.csproj">
+      <Project>{63858fbe-cad5-4027-b5c4-7ee3140f2a56}</Project>
+      <Name>GTJA.SystemManage.AppModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.SystemManage.BLL\GTJA.SystemManage.BLL.csproj">
+      <Project>{018f67d0-4e25-4479-93d9-68c47706f685}</Project>
+      <Name>GTJA.SystemManage.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GTJA.SystemManage.Model\GTJA.SystemManage.Model.csproj">
+      <Project>{e1d16495-e8e9-4a70-90a3-003b8883f1be}</Project>
+      <Name>GTJA.SystemManage.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
